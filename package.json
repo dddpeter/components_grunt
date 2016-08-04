@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "JavaScript library of custom",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@git.coding.net:dddpeter/components.git"
+  },
   "engines": {
     "node": ">=0.10.0"
   },
@@ -22,12 +26,14 @@
     "grunt": "^1.0.1",
     "grunt-bower-task": "^0.4.0",
     "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^1.0.1",
     "grunt-contrib-htmlmin": "^2.0.0",
     "grunt-contrib-imagemin": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-usemin": "^3.1.1"
   }
 }

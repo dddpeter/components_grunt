@@ -15,6 +15,16 @@ module.exports = function(grunt) {
         files: [{
           src: 'dist/'
         }]
+      },
+      dist:{
+        files: [{
+          src: [
+            'dist/<%= pkg.name %>/scripts/*.js',
+            'dist/<%= pkg.name %>/styles/*.css',
+            '!dist/<%= pkg.name %>/scripts/*.min.js',
+            '!dist/<%= pkg.name %>/styles/*.min.css'
+          ]
+        }]
       }
     },
     //copy 类库到项目文件夹
@@ -47,6 +57,31 @@ module.exports = function(grunt) {
             src: ['images/*.{png,jpg,jpeg,gif,webp,svg}','images/*/*.{png,jpg,jpeg,gif,webp,svg}'],
             dest: 'dist/<%= pkg.name %>'}
         ]
+      }
+    },
+    //合并文件
+    concat: {
+      js:{
+        files: [{
+        expand: false,
+        cwd: 'dist/<%= pkg.name %>',
+        src: [
+          "scripts/lib/jquery/jquery.js",
+          "scripts/x-model.js",
+          "scripts/app.js"
+        ],
+        dest: "dist/<%= pkg.name %>/scripts/components.min.js"
+        }]
+      },
+      css:{
+        files: [{
+          expand: false,
+          cwd: 'dist/<%= pkg.name %>',
+          src: [
+            "styles/*.css"
+          ],
+          dest: "dist/<%= pkg.name %>/styles/components.min.css"
+        }]
       }
     },
     //压缩JS
@@ -108,6 +143,9 @@ module.exports = function(grunt) {
         ]
       }
     },
+    usemin: {
+      html: ['dist/<%= pkg.name %>/*.html','dist/<%= pkg.name %>/**/*.html']
+    },
     //压缩HTML
     htmlmin: {
       options: {
@@ -126,7 +164,7 @@ module.exports = function(grunt) {
           {
             expand: true,
             cwd: 'dist/<%= pkg.name %>',
-            src: ['*.html','views/**/*.html'],
+            src: ['*.html'],
             dest: 'dist/<%= pkg.name %>'
           }
         ]
@@ -162,6 +200,7 @@ module.exports = function(grunt) {
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -170,11 +209,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
-
+  grunt.loadNpmTasks('grunt-usemin');
   // Default task.
   grunt.registerTask('default', ['prod']);
 
   //prod
-  grunt.registerTask('prod', ['clean','bower','copy','uglify','cssmin','imagemin','htmlmin']);
-
+  grunt.registerTask('prod', ['clean','bower','copy','concat','uglify',
+    'cssmin','imagemin','usemin','htmlmin','clean:dist']);
 };

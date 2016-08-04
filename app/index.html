@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>组件测试</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <!-- build:css styles/components.min.css -->
+      <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/app.css">
+    <!-- endbuild -->
 </head>
 <body>
-
+<!-- build:js  scripts/components.min.js -->
+<script src="scripts/lib/jquery/jquery.js"></script>
+<script src="scripts/x-model.js"></script>
+<script src="scripts/app.js"> </script>
+<!-- endbuild -->
+<script>
+    alert('test1');
+    confirm('test2',function(data){
+        console.log(data);
+    });
+    alert('test3');
+    alert('test4');
+    alert('test5');
+    alert('test6');
+</script>
 </body>
 </html>

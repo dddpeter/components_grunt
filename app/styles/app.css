@@ -1,0 +1,66 @@
+#x_WinpopMask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4); }
+
+#x_WinpopBox {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 1000;
+  margin-top: -50px;
+  margin-left: -100px;
+  width: 200px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 8px; }
+
+.x_WinpopMain {
+  padding: 16px 10px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: #666;
+  font-size: 16px; }
+
+.x_WinpopBtns {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  overflow: hidden; }
+
+.x_AltBtn, .x_CfmTrue, .x_CfmFalse {
+  height: 32px;
+  border: 0;
+  border-top: 1px solid rgba(242, 242, 242, 0.8) !important;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer; }
+
+.x_AltBtn {
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid rgba(242, 242, 242, 0.8);
+  background-color: #0e90d2; }
+
+.x_CfmTrue, .x_CfmFalse {
+  width: 50%; }
+
+.x_CfmTrue {
+  border-radius: 0 0 0 8px;
+  border-right: 1px solid rgba(242, 242, 242, 0.8);
+  background-color: #5eb95e; }
+
+.x_CfmFalse {
+  border-radius: 0 0 8px 0;
+  border-left: 1px solid rgba(242, 242, 242, 0.8);
+  background-color: #dd514c; }
+
+/*# sourceMappingURL=app.css.map */
