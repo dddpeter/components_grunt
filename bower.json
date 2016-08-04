@@ -1,0 +1,21 @@
+{
+  "name": "x-componets",
+  "description": "JavaScript library of custom",
+  "main": "index.js",
+  "authors": [
+    "dddpeter@126.com"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "javascript",
+    "dddpeter"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
